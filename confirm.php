@@ -1,9 +1,40 @@
 <?php
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: contact.php");
+    exit();
+}
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-$company = htmlspecialchars($_POST['company'], ENT_QUOTES, 'UTF-8');
+$company = htmlspecialchars($_POST['companyName'], ENT_QUOTES, 'UTF-8');
 $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
 $age = htmlspecialchars($_POST['age'], ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
+
+
+// フォーム以外からアクセスされた場合
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: contact.php");
+    exit();
+}
+
+// POSTデータ取得
+$name = trim($_POST["name"]);
+$companyName = trim($_POST["companyName"]);
+$email = trim($_POST["email"]);
+$age = trim($_POST["age"]);
+$message = trim($_POST["message"]);
+
+// 入力チェック
+if (
+    $name == "" ||
+    $companyName == "" ||
+    $email == "" ||
+    $age == "" ||
+    $message == ""
+) {
+    echo "必須項目が未入力です。入力内容をご確認ください。";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
