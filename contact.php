@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="contact-container">
+<header id="header">
     <h1>お問い合わせフォーム</h1>
-
+</header>
     <ul class="menu">
         <li><a href="#">トップページ</a></li>
         <li><a href="#">人気投稿</a></li>
@@ -57,12 +57,19 @@
             </tr>
         </table>
 
-        <button type="submit">送信</button>
+        <input type="submit" value="送信"></input>
 
     </form>
-    <button id="changeColorBtn">押してみてね！</button>
+    <div class="txt-container">
+        <p>横のボタンを押すとfooterのの背景色が変わります</p>
+    </div>
+    
 </div>
-<footer id="footer"></footer>
+<footer id="footer">
+    <div class="btn-container">
+        <button id="changeColorBtn">押してみてね！</button>
+    </div>
+</footer>
 
 <script src="style.js"></script>
 </body>

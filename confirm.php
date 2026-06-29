@@ -29,7 +29,7 @@ $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
         }
 
         th,td{
-            border: 2px solid #666;
+            border: 3px solid #666;
             padding: 8px;
         }
 
@@ -38,14 +38,20 @@ $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
             background: #f5f5f5;
         }
 
-        .btn{
-            margin-top: 10px;
-        }
+        /* 送信ボタン */
+input[type="submit"] {
+    width: 60x;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        button{
-            padding: 5px 15px;
-            margin-right: 5px;
-        }
+input[id="button"] {
+    width: 60x;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+        
     </style>
 </head>
 <body>
@@ -93,13 +99,13 @@ $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
     <form action="send.php" method="post" onsubmit="return checkForm();">
 
         <input type="hidden" name="name" id="name" value="<?= $name ?>">
-        <input type="hidden" name="company" id="company" value="<?= $company ?>">
+        <input type="hidden" name="companyName" id="company" value="<?= $company ?>">
         <input type="hidden" name="email" id="email" value="<?= $email ?>">
         <input type="hidden" name="age" id="age" value="<?= $age ?>">
         <input type="hidden" name="message" id="message" value="<?= $message ?>">
 
         <div class="btn">
-            <button type="submit">送信</button>
+            <input type="submit" value="送信"></input>
         </div>
     </form>
 
@@ -107,11 +113,11 @@ $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
     <form action="contact.php" method="post">
 
     <input type="hidden" name="name" id="name" value="<?= $name ?>">
-        <input type="hidden" name="company" id="company" value="<?= $company ?>">
+        <input type="hidden" name="companyName" id="company" value="<?= $company ?>">
         <input type="hidden" name="email" id="email" value="<?= $email ?>">
         <input type="hidden" name="age" id="age" value="<?= $age ?>">
         <input type="hidden" name="message" id="message" value="<?= $message ?>">
-        <button type="button" onclick="history.back()">戻る</button>
+        <input type="button" onclick="history.back()" id="button" value="戻る">
 
     </form>
 
