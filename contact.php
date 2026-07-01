@@ -9,7 +9,7 @@
 <body>
 <div class="contact-container">
 <header id="header">
-    <h1>お問い合わせフォーム</h1>
+    <h2>お問い合わせフォーム</h2>
 </header>
     <ul class="menu">
         <li><a href="#">トップページ</a></li>
@@ -24,28 +24,28 @@
             <tr>
                 <th>お名前</th>
                 <td>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" size="40">
                 </td>
             </tr>
 
             <tr>
                 <th>会社名</th>
                 <td>
-                    <input type="text" name="company" id="companyName">
+                    <input type="text" name="companyName" id="companyName" size="40">
                 </td>
             </tr>
 
             <tr>
                 <th>メールアドレス</th>
                 <td>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" size="40">
                 </td>
             </tr>
 
             <tr>
                 <th>年齢</th>
                 <td>
-                    <input type="number" name="age" id="age">
+                    <input type="number" name="age" id="age" size="40">
                 </td>
             </tr>
 

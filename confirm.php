@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit();
 }
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-$company = htmlspecialchars($_POST['companyName'], ENT_QUOTES, 'UTF-8');
+$companyName = htmlspecialchars($_POST['companyName'], ENT_QUOTES, 'UTF-8');
 $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
 $age = htmlspecialchars($_POST['age'], ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
@@ -42,7 +42,7 @@ if (
 <head>
     <meta charset="UTF-8">
     <title>お問い合わせフォーム - 確認画面</title>
-    <script src="style.js"></script>
+    
 
 
     <style>
@@ -107,7 +107,7 @@ input[id="button"] {
 
         <tr>
             <th>会社名</th>
-            <td><?= $company ?></td>
+            <td><?= $companyName ?></td>
         </tr>
 
         <tr>
@@ -130,7 +130,7 @@ input[id="button"] {
     <form action="send.php" method="post" onsubmit="return checkForm();">
 
         <input type="hidden" name="name" id="name" value="<?= $name ?>">
-        <input type="hidden" name="companyName" id="company" value="<?= $company ?>">
+        <input type="hidden" name="companyName" id="companyName" value="<?= $companyName ?>">
         <input type="hidden" name="email" id="email" value="<?= $email ?>">
         <input type="hidden" name="age" id="age" value="<?= $age ?>">
         <input type="hidden" name="message" id="message" value="<?= $message ?>">
@@ -144,7 +144,7 @@ input[id="button"] {
     <form action="contact.php" method="post">
 
     <input type="hidden" name="name" id="name" value="<?= $name ?>">
-        <input type="hidden" name="companyName" id="company" value="<?= $company ?>">
+        <input type="hidden" name="companyName" id="companyName" value="<?= $companyName ?>">
         <input type="hidden" name="email" id="email" value="<?= $email ?>">
         <input type="hidden" name="age" id="age" value="<?= $age ?>">
         <input type="hidden" name="message" id="message" value="<?= $message ?>">
@@ -153,6 +153,6 @@ input[id="button"] {
     </form>
 
 </div>
-
+<script src="style.js"></script>
 </body>
 </html>

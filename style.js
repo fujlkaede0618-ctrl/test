@@ -9,17 +9,23 @@
         const message = document.getElementById("message").value;
     
     
-        // 確認ダイアログ
-        const confirmMessage =
-            "下記の内容を本当に送信しますか？\n\n" +
-            "お名前 ➡ " + name + "\n" +
-            "会社名 ➡ " + companyName + "\n" +
-            "メールアドレス ➡ " + email + "\n" +
-            "年齢 ➡ " + age + "\n" +
-            "お問い合わせ内容 ➡ " + message;
-    
-        return confirm(confirmMessage);
+        if (
+            name === "" ||
+            companyName === "" ||
+            email === "" ||
+            age === "" ||
+            message === ""
+        ) {
+            alert("必須項目が未入力です。入力内容をご確認ください。");
+            return false;
+        }
+        // 全て入力されている場合のみ確認ダイアログ
+    if (!confirm("この内容で送信します。よろしいですか？")) {
+        return false;   // キャンセル
     }
+
+    return true;        // OKなら送信
+}
 
 
     const button = document.querySelector("#changeColorBtn");
